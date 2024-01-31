@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: grid;
+  font-size: 1.5rem;
+  place-items: center;
+  place-content: center;
+  line-height: 1.6;
+  min-height: 100vh;
+  font-family: "Lexend Deca", sans-serif;
+}
+:root {
+  --orange: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --green: hsl(179, 100%, 13%);
+
+  --ft-serif: "Big Shoulders Display", serif;
+
+  --clr-text: hsla(0, 0%, 100%, 0.75);
+  --clr-white: hsl(0, 0%, 95%);
+}
+
+.container {
+  width: min(700px, 90%);
+  display: grid;
+  margin: 4rem;
+}
+
+.card {
+  padding: 3rem;
+  display: grid;
+  align-items: center;
+  height: 1/2;
+  gap: 2rem;
+}
+.card__title {
+  font-family: var(--ft-serif);
+  font-size: 4rem;
+  color: var(--clr-white);
+}
+.card--bg-orange {
+  background-color: var(--orange);
+  border-radius: 12px 12px 0 0;
+  a {
+    color: var(--orange);
+  }
+}
+.card--bg-cyan {
+  background-color: var(--cyan);
+  a {
+    color: var(--cyan);
+  }
+}
+.card--bg-green {
+  background-color: var(--green);
+  border-radius: 0 0 12px 12px;
+
+  a {
+    color: var(--green);
+  }
+}
+
+.card__text {
+  margin-bottom: 2rem;
+  color: var(--clr-white);
+}
+.btn:is(:link, :visited),
+.btn {
+  padding: 1rem 2rem;
+  align-items: end;
+  justify-self: start;
+  text-decoration: none;
+  border-radius: 100vw;
+  background-color: white;
+}
+@media (min-width: 650px) {
+  body {
+  }
+  .container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  .card--bg-green {
+    border-radius: 0 12px 12px 0;
+  }
+
+  .card--bg-orange {
+    border-radius: 12px 0 0 12px;
+  }
+}
